@@ -97,3 +97,53 @@ President meets delegates in Geneva.
 | Training samples | 120,000 |
 | Test samples | 7,600 |
 | Test accuracy | 92.24% |
+
+## FastAPI
+
+Start the API server:
+
+```bash
+uv run uvicorn src.api.app:app --reload
+```
+
+### Endpoints
+
+`GET /api/health` — health check
+
+```json
+{ "status": "healthy" }
+```
+
+`POST /api/predict` — classify a headline or article
+
+Request:
+
+```json
+{ "text": "Your headline or article text here" }
+```
+
+Response:
+
+```json
+{
+  "category": "Science/Technology",
+  "confidence": 0.958,
+  "scores": {
+    "Business": 0.038,
+    "Science/Technology": 0.958,
+    "Sports": 0.001,
+    "World": 0.004
+  }
+}
+```
+
+### API tests
+
+`tests/tests.http` contains HTTP request samples for each category. Use with VS Code REST Client extension or IntelliJ HTTP Client.
+
+## Docker
+
+```bash
+docker build -t articles-ml .
+docker run --rm -p 8000:8000 articles-ml
+```

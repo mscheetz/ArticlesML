@@ -1,4 +1,4 @@
-from config import MODEL_PATH, LABEL_NAMES
+from src.config import MODEL_PATH, LABEL_NAMES
 
 import joblib
 

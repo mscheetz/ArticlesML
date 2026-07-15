@@ -1,0 +1,58 @@
+### 
+# 1
+GET http://localhost:8000/api/health
+
+###
+# 2 -> Business
+POST http://localhost:8000/api/predict
+Content-Type: application/json 
+
+{
+    "text": "The central bank raised interest rates following another month of high inflation."
+}
+
+###
+# 3 -> Sports
+POST http://localhost:8000/api/predict
+Content-Type: application/json 
+
+{
+    "text": "The team secured the championship after scoring twice in the final minutes."
+}
+
+###
+# 4 -> Science/Technology
+POST http://localhost:8000/api/predict
+Content-Type: application/json 
+
+{
+    "text": "Researchers unveiled a new processor designed for artificial intelligence workloads."
+}
+
+###
+# 5 -> World
+POST http://localhost:8000/api/predict
+Content-Type: application/json 
+
+{
+    "text": "Diplomats met Wednesday to negotiate a ceasefire between the two countries."
+}
+
+###
+# 6 -> World
+POST http://localhost:8000/api/predict
+Content-Type: application/json 
+
+{
+    "text": "President meets delegates in Geneva."
+}
+
+###
+# 7 -> Science/Technology
+POST http://localhost:8000/api/predict
+Content-Type: application/json 
+
+{
+    "text": "JOHANNESBURG, July 15 (Reuters) - Amazon's (AMZN.O), opens new tab low-earth orbit satellite internet venture Amazon Leo has signed an agreement with South Africa's Herotel to launch a ​new broadband service aimed at connecting underserved rural communities, it ‌said on Wednesday.Under the agreement, Herotel, South Africa's largest fixed internet service provider, will use Amazon Leo's satellite technology to offer a new service called evry, which ​is expected to launch commercially in 2027 for residential customers."
+}
+
