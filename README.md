@@ -43,10 +43,11 @@ Science/Technology     0.8978    0.9063    0.9020      1900
       weighted avg     0.9222    0.9224    0.9222      7600
 
 Confusion matrix:
-[[1731   53   69   47]
- [  15 1866   14    5]
- [  51   14 1691  144]
- [  50   19  109 1722]]
+Predicted/Actual    World  Sports  Business  Science/Technology
+World                1731      53        69                  47
+Sports                 15    1866        14                   5
+Business               51      14      1691                 144
+Science/Technology     50      19       109                1722
 ```
 
 ## Predict

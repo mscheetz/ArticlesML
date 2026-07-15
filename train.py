@@ -10,6 +10,7 @@ import joblib
 import json
 from datetime import datetime, timezone
 from time import perf_counter
+import pandas as pd
 
 def format_duration(seconds: float) -> str:
     minutes, remaining_seconds = divmod(seconds, 60)
@@ -110,8 +111,18 @@ def main() -> None:
         )
     )
     
+    cm = confusion_matrix(test_labels, predictions)
+    labels = list(LABEL_NAMES.values())
+    cm_df = pd.DataFrame(
+        cm,
+        index=labels,
+        columns=labels,
+    )
+    
+    cm_df.columns.name = "Predicted/Actual"
+
     print("Confusion matrix:")
-    print(confusion_matrix(test_labels, predictions))
+    print(cm_df)
 
     MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump(model, MODEL_PATH)
